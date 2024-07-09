@@ -1,0 +1,11 @@
+{
+  "type": "nextjs-and-nestjs",
+  "commands": {
+    "build": "pnpm run build",
+    "start": "pnpm run start"
+  },
+  "commandsWorkspace": {
+    "init": "pnpm install && pnpm run --filter server database:migration:run",
+    "dev": "pnpm run dev"
+  }
+}
