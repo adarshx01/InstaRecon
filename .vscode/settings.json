@@ -1,7 +1,7 @@
 {
   "workbench.colorTheme": "Default Dark Modern",
   "git.confirmSync": false,
-  "files.autoSave": "off",
+  "files.autoSave": "afterDelay",
   "git.autofetch": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
