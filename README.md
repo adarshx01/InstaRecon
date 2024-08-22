@@ -17,6 +17,7 @@
 Make sure the following tools are installed on your computer:
 
 - **Docker Desktop**: [Get Docker](https://www.docker.com/get-started/)
+- **Firebase Setup**: [Add firebase Config](https://firebase.google.com/)
 - **Node.js**: [Install Node.js](https://nodejs.org/en)
 - **npm**: [Install npm](https://www.npmjs.com/)
 
