@@ -18,7 +18,8 @@
     "@nestjs/axios": "^3.0.2",
     "axios": "^1.7.2",
     "browser-image-compression": "^2.0.2",
-    "firebase": "^10.12.3"
+    "firebase": "^10.12.3",
+    "pnpm": "^9.7.1"
   },
   "devDependencies": {
     "@types/w3c-image-capture": "^1.0.10"
