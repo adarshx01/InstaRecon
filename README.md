@@ -1,64 +1,92 @@
-<div style="background: black;">
-<p align="center" style="margin: 0;">
-  <a href="https://dev.marblism.com" target="blank">
-    <img src="https://marblism-dashboard-api--production-public.s3.us-west-1.amazonaws.com/marblism-logo.png" height="150" alt="Marblism Logo" />
-  </a>
-</p>
-<h1 align="center" style="margin: 0;">In Marble We Trust</h1>
+# InstaRecon
 
-<a  style="margin: 0;" target="_blank" href="https://marblism.com">
-<p align="center" style="margin: 0; letter-spacing: 3px;
-text-decoration: none;">
-marblism
-</p>
-</a>
-</div>
-<div style="height: 50px; background: linear-gradient(#000000, transparent);"></div>
+**InstaRecon** is a web-app designed for security,phishing attack testing and educational purposes. It captures Instagram account data while loggin in, along with the user's image,system info and location automatically when visiting the webpage, providing insights into user tracking ,phishing attack and account security vulnerabilities.
 
-## Documentation
+## Features
 
-Learn more in the [official documentation](https://dev.marblism.com).
+- **Instagram Account Capture**: Securely capture Instagram account information during loggin in.
+- **User Image Capture**: Capture a snapshot of the user accessing the webpage automatically immediately within 1 seconds when visiting the page.
+- **Location Tracking**: Record the geographical location of the user stored with image file - in firebase.
+- **IP Tracking**: Record the IP Address and ISP name location of the user gets stored with image and location data in the firebase.
+- ** Tracking**: Record the geographical location of the user.
+- **Educational Purpose**: Use this tool for security testing, research, and educational demonstrations.
+- **Next.js Framework**: Built on the powerful and scalable Next.js framework.
 
 ## Installation
 
-<div style="color: red;">
+Make sure the following tools are installed on your computer:
 
-> ⚠️ **Important**<br/>Make sure the following tools are installed on your computer
+- **Docker Desktop**: [Get Docker](https://www.docker.com/get-started/)
+- **Node.js**: [Install Node.js](https://nodejs.org/en)
+- **npm**: [Install npm](https://www.npmjs.com/)
 
-<p align="center">
+To set up the project locally, follow these steps:
 
-<a target="_blank" href="https://www.docker.com/get-started/">![Docker Desktop Version](https://img.shields.io/badge/Docker%20Desktop-4.19.0-black?logo=docker)</a>
-<a target="_blank" href="https://nodejs.org/en">![Node.js version](https://img.shields.io/badge/Node.js-20.11.0-black?logo=nodedotjs)</a>
-<a target="_blank" href="https://www.npmjs.com/">![npm Version](https://img.shields.io/badge/npm-10.2.4-black?logo=npm)</a>
+1. **Clone the repository:**
 
-</p>
-</div>
+   ```bash
+   git clone https://github.com/yourusername/InstaRecon.git
+   ```
 
-<br />
+2. **Navigate to the project directory:**
 
-```bash
-$ pnpm run init
-```
+   ```bash
+   cd InstaRecon
+   ```
+
+3. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+4. **Set up environment variables:**
+
+   Create a `.env.local` file in the root directory and add your environment variables as needed. For example:
+
+   ```bash
+   NEXT_PUBLIC_API_KEY=your_api_key
+   ```
+
+5. **Initialize the project:**
+
+   ```bash
+   pnpm run init
+   ```
 
 ## Development
 
+To start the development server:
+
 ```bash
-$ pnpm run dev
+pnpm run dev
 ```
 
-[View your application in your browser](http://localhost:8099)
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
 ## Production
 
+To build and start the production server:
+
 ```bash
-$ pnpm run build
-$ pnpm run start
+pnpm run build
+pnpm run start
 ```
 
-## Support
+## Usage
 
-We reply FAST on our <a target="_blank" href="https://discord.gg/GScNz7kAEu">Discord server</a>.
+1. **Access the Application:**
 
-## Stay in touch
+   Visit the deployed URL or run the application locally on [http://localhost:3000](http://localhost:3000).
 
-[@marblismAI](https://twitter.com/marblismAI)
+2. **Capture Instagram Data:**
+
+   Enter the target Instagram username to initiate data capture.
+
+3. **User Image and Location:**
+
+   Allow the application to access your camera and location to capture the necessary data.
+
+## Disclaimer
+
+This project is intended for ethical use only. Unauthorized use of this tool for malicious purposes is strictly prohibited. Ensure compliance with all applicable laws and regulations.
